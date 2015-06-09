@@ -1,3 +1,6 @@
+pyHotReload
+-----------
+
 pyHotReload allows developers to patch code while running, while still keeping the current state of the program.
 
 hotreload is differant from reload() in a few ways. The reload built-in only overwrites the previous version of a module in sys.modules. It doesnt change any existing instances which are based on the old objects. The old objects will still be in memory until not refrenced anymore.
@@ -8,7 +11,36 @@ In its current alpha state, there will be bugs causing the reloaded module to di
 
 Tested with python 2.7.5, 3.3.2 and pypy with Windows, OSX, and Linux.
 
-Current to-do list:
+
+
+Clone pyHotReload from github
+-----------------------------
+
+```
+$ git clone https://github.com/mdsitton/pyHotReload.git
+
+$ cd pyHotReload
+
+$ python setup.py install
+```
+
+Try the example
+---------------
+
+To demo the reload functionality run the example in the tests directory:
+
+```
+$ cd tests
+
+$ python main.py
+Liftoff! :D
+```
+Looking inside you can see it runs the 'run' function from testing.py, edit testing.py to see changes applied live.
+
+
+
+Current to-do list
+------------------
   * Detect removed objects
   * Look into detecting renamed objects
   * Verify \_\_slots\_\_ support.
